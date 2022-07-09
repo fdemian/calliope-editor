@@ -1,0 +1,107 @@
+{
+  "name": "calliope-editor",
+  "version": "0.3.18",
+  "private": false,
+  "source": "src/Calliope/index.ts",
+  "main": "dist/cjs/index.js",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "@excalidraw/excalidraw": "0.12.0",
+    "@lexical/clipboard": "0.3.7",
+    "@lexical/code": "0.3.7",
+    "@lexical/file": "0.3.7",
+    "@lexical/hashtag": "0.3.7",
+    "@lexical/link": "0.3.7",
+    "@lexical/list": "0.3.7",
+    "@lexical/overflow": "0.3.7",
+    "@lexical/plain-text": "0.3.7",
+    "@lexical/react": "0.3.7",
+    "@lexical/rich-text": "0.3.7",
+    "@lexical/selection": "0.3.7",
+    "@lexical/table": "0.3.7",
+    "@lexical/utils": "0.3.7",
+    "@swc/helpers": "^0.4.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "13.3.0",
+    "@testing-library/user-event": "14.2.1",
+    "@types/jest": "28.1.4",
+    "@types/node": "18.0.3",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "emoji-toolkit": "^6.6.0",
+    "emojibase": "^6.1.0",
+    "emojibase-data": "^7.0.1",
+    "katex": "0.16.0",
+    "lexical": "0.3.7",
+    "link-preview-generator": "^1.1.0",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-color": "^2.19.3",
+    "react-dom": "18.2.0",
+    "react-player": "^2.10.1",
+    "react-scripts": "5.0.1",
+    "regenerator-runtime": "^0.13.9",
+    "typescript": "^4.7.4",
+    "web-vitals": "^2.1.4",
+    "yjs": "^13.5.39"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "ts-types": "tsc --jsx react-jsx --outDir dist",
+    "watch": "parcel watch",
+    "build": "rimraf dist && parcel build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/node-logger": "^6.5.9",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "@swc/helpers": "^0.4.3",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "parcel": "2.6.2",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.73.0"
+  },
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ]
+}
