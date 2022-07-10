@@ -93,6 +93,8 @@ function EquationComponent({
     }
   }, [editor, onHide, showEquationEditor]);
 
+  const isReadOnly:boolean = editor.isReadOnly();
+
   return (
     <>
       {showEquationEditor ? (
@@ -107,7 +109,9 @@ function EquationComponent({
           equation={equationValue}
           inline={inline}
           onClick={() => {
-            setShowEquationEditor(true);
+            if(!editor.isReadOnly()){
+              setShowEquationEditor(true);
+            }
           }}
         />
       )}
@@ -141,7 +145,7 @@ export class EquationNode extends DecoratorNode<JSX.Element> {
     this.__equation = equation;
     this.__inline = inline ?? false;
   }
-  
+
   static importJSON(serializedNode: SerializedEquationNode): EquationNode {
     const node = $createEquationNode(
       serializedNode.equation,
