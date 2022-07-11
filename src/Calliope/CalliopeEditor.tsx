@@ -13,6 +13,7 @@ import EditorPlugins from './Plugins/Plugins';
 import EDITOR_COMMANDS from './Plugins/Commands';
 import {createPortal} from 'react-dom';
 import FloatingLinkEditor from './UI/Link/FloatingLinkEditor';
+import { CalliopeEditorProps } from './CalliopeEditorTypes';
 import theme from './editorTheme';
 import './CalliopeEditor.css';
 
@@ -40,7 +41,7 @@ const INITIAL_FORMATS = {
 
 export const CalliopeContext = createContext();
 
-const Editor = ({ config, containerRef, setFormats }) => {
+const Editor = ({ config, containerRef, setFormats }: CalliopeEditorProps) => {
 
   const [internalFormat, setInternalFormat] = useState(INITIAL_FORMATS);
   const initialConfig = {

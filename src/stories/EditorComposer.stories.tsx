@@ -45,37 +45,53 @@ export const EditorComposer = () => {
   }
 
   const blockFormatChangeFn = (val) => {
+    if(!containerRef.current)
+      return;
     containerRef.current.executeCommand(val);
   }
 
   const codeLanguageChange = (val) => {
+    if(!containerRef.current)
+      return;
     containerRef.current.executeCommand("CODE_LANGUAGE_CHANGE", val);
   }
 
   const fontFamilyChangeFn = (val) => {
+    if(!containerRef.current)
+      return;
     containerRef.current.executeCommand("CHANGE_FONT", val);
   }
 
   const fontSizeChange = (val) => {
+    if(!containerRef.current)
+      return;
     containerRef.current.executeCommand("CHANGE_FONT_SIZE", val);
   }
 
   const fontColorSelect = (val) => {
+    if(!containerRef.current)
+      return;
     containerRef.current.executeCommand("CHANGE_FONT_COLOR", val.hex);
   }
 
   const bgColorSelect = (val) => {
+    if(!containerRef.current)
+      return;
     containerRef.current.executeCommand("CHANGE_FONT_BG_COLOR", val.hex);
   }
 
   const insertTweet = () => {
-    const tweetId = url.split('status/')?.[1]?.split('?')?.[0]
+    if(!containerRef.current || url === null)
+      return;
+    const tweetId = url.split('status/')?.[1]?.split('?')?.[0];
     containerRef.current.executeCommand("INSERT_TWEET", tweetId);
     setUrl(null);
     setTweetToolbar(false);
   }
 
   const insertImage = () => {
+    if(!containerRef.current)
+      return;
     const props = {
       altText: "",
       src: url
@@ -86,6 +102,8 @@ export const EditorComposer = () => {
   }
 
   const insertVideo = () => {
+    if(!containerRef.current || url === null)
+      return;
     containerRef.current.executeCommand("INSERT_VIDEO", url);
     setUrl(null);
     setVideoToolbar(false);
@@ -94,10 +112,15 @@ export const EditorComposer = () => {
   const insertTable = () => {
     const columns = 7;
     const rows = 7;
+    if(!containerRef.current)
+      return;
     containerRef.current.executeCommand("INSERT_TABLE", {columns, rows});
   }
 
   useEffect(() => {
+    if(!containerRef.current)
+      return;
+
     containerRef.current.executeCommand("INSERT_CITE_QUOTE", {
       author: { name: '@rulo', link: 'https://www.google.com' },
       source: { content: QUOTE_STATE, link: 'https://www.google.com' }

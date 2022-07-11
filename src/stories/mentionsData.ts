@@ -1,4 +1,10 @@
-export const initialMentions = [
+type MentionObj = {
+  name: string,
+  link: string,
+  avatar: string | null
+};
+
+export const initialMentions:MentionObj[] = [
  {
    name: 'gonnza',
    link: '/users/1/gonza',
