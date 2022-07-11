@@ -38,3 +38,24 @@ export type CalliopeEditorProps = {
   containerRef: React.RefObject<HTMLDivElement>,
   setFormats: (formats:any) => void
 }
+
+export type CalliopeFormatTypes = {
+  blockType: string,
+  selectedElementKey: string | null,
+  isLink: boolean,
+  isBold: boolean,
+  isItalic: boolean,
+  isUnderline: boolean,
+  isStrikethrough: boolean,
+  isSubscript: boolean,
+  isSuperscript: boolean,
+  isCode: boolean,
+  canUndo: boolean,
+  canRedo: boolean,
+  isRTL: boolean,
+  codeLanguage: string,
+  fontSize: string,
+  fontColor: string,
+  bgColor: string,
+  fontFamily: string
+};

@@ -13,12 +13,12 @@ import EditorPlugins from './Plugins/Plugins';
 import EDITOR_COMMANDS from './Plugins/Commands';
 import {createPortal} from 'react-dom';
 import FloatingLinkEditor from './UI/Link/FloatingLinkEditor';
-import { CalliopeEditorProps } from './CalliopeEditorTypes';
+import { CalliopeEditorProps, CalliopeFormatTypes } from './CalliopeEditorTypes';
 import theme from './editorTheme';
 import './CalliopeEditor.css';
 
 /* canUndo: inte, canRedo: false, */
-const INITIAL_FORMATS = {
+const INITIAL_FORMATS:CalliopeFormatTypes = {
   blockType: 'paragraph',
   selectedElementKey: null,
   isLink: false,

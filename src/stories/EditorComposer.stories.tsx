@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { CalliopeFormatTypes } from '../Calliope/CalliopeEditorTypes';
 import Editor from '../Calliope/CalliopeEditor.tsx';
 import { SketchPicker } from 'react-color';
 import {initialMentions} from './mentionsData';
@@ -22,7 +23,7 @@ const args = {
 export const EditorComposer = () => {
   const containerRef = useRef(null);
   const [editorState, setEditorState] = useState(null);
-  const [formats, setFormats] = useState({});
+  const [formats, setFormats] = useState<CalliopeFormatTypes>({});
   const [suggestions, setSuggestions] = useState(initialMentions);
   const [isSpeechToText, setIsSpeechToText] = useState(false);
 
