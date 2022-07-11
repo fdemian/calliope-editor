@@ -14,7 +14,7 @@ const EquationsPlugin = lazy(() => import('./EquationsPlugin'));
 const EditorRefPlugin = lazy(() => import('./EditorRefPlugin'));
 const ListMaxIndentLevelPlugin = lazy(() => import('./ListMaxIndentLevelPlugin'));
 const EmojisPlugin = lazy(() => import('./Emoji/EmojiPlugin.tsx'));
-const MentionsPlugin = lazy(() => import('./EquationsPlugin'));
+const MentionsPlugin = lazy(() => import('./Mentions/MentionsPlugin.tsx'));
 const SetFormatPlugin = lazy(() => import('./SetFormatPlugin'));
 const KeyboardPlugin = lazy(() => import('./KeyboardPlugin'));
 const SpoilerPlugin = lazy(() => import('./SpoilerPlugin'));

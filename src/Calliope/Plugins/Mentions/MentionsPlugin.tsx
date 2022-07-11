@@ -51,7 +51,7 @@ function useMentions(editor: LexicalEditor, config): React$Node {
     const updateListener = () => {
       const range = activeRange;
       const text = getMentionsTextToSearch(editor);
-
+      
       if (text === previousText || range === null) {
         return;
       }
