@@ -158,6 +158,11 @@
   resize: vertical;
 }
 
+blockquote * {
+  color: black !important;
+  background-color: #f9f9f9 !important;
+}
+
 .calliope-bold-text {
   font-weight: bold;
 }
