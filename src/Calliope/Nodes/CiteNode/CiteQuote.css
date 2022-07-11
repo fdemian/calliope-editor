@@ -13,7 +13,6 @@ figcaption a, figcaption a:visited {
 }
 
 blockquote {
-  border-left: 5px solid var(--primary-low);
   background-color: #f9f9f9;;
   clear: both;
 }

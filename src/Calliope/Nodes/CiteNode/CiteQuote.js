@@ -19,7 +19,7 @@ const CiteQuote = ({author, source }) => {
   const SourceComp = sourceLinkComponent;
   const SourceLinkComp = SourceComp ? SourceComp : DefaultSourceComp;
   const citeEditor = createEditor({
-    isReadOnly: calliopeConfig.isReadOnly,
+    isReadOnly: calliopeConfig.readOnly,
     initialState: source.content
   });
 
@@ -34,7 +34,6 @@ const CiteQuote = ({author, source }) => {
     </figcaption>
     <blockquote>
       <CiteTextEditor
-        readOnly={calliopeConfig.isReadOnly}
         citeEditor={citeEditor}
         plugins={[]}
         config={calliopeConfig}

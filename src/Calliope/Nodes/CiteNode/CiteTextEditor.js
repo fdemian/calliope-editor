@@ -7,13 +7,13 @@ const Placeholder = ({children, className }) =>(
   <div className={className || 'Placeholder__root'}>{children}</div>
 )
 
-const CiteTextEditor = ({ plugins, config, content, citeEditor, readOnly }) => {
+const CiteTextEditor = ({ plugins, config, content, citeEditor }) => {
   const Plugins = plugins;
 
   useEffect(() => {
-   citeEditor.setReadOnly(readOnly);
+   citeEditor.setReadOnly(config.readOnly);
   },
-  [citeEditor, readOnly]);
+  [citeEditor, config.readOnly]);
 
   useEffect(() => {
     const editorState = citeEditor.parseEditorState(content);
