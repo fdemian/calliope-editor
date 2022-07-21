@@ -361,27 +361,16 @@ blockquote * {
 
 .calliope-code:before {
   content: attr(data-gutter);
-   position: absolute;
-   background-color: #eee;
-   left: 0;
-   top: 0;
-   border-right: 1px solid #ccc;
-   padding: 8px;
-   color: #777;
-   white-space: pre-wrap;
-   text-align: right;
-   min-width: 25px;
-}
-
-.calliope-code:after {
-   content: attr(data-highlight-language);
-   top: 0;
-   right: 3px;
-   padding: 3px;
-   font-size: 10px;
-   text-transform: uppercase;
-   position: absolute;
-   color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  background-color: #eee;
+  left: 0;
+  top: 0;
+  border-right: 1px solid #ccc;
+  padding: 8px;
+  color: #777;
+  white-space: pre-wrap;
+  text-align: right;
+  min-width: 25px;
 }
 
 .calliope__tokenComment {
@@ -586,6 +575,14 @@ i.chevron-down {
   background-color: #eee;
   margin: 4px 8px;
   height: 1px;
+}
+
+i.copy {
+  background-image: url(UI/Images/copy.svg);
+}
+
+i.success {
+  background-image: url(UI/Images/success.svg);
 }
 
 @media screen and (max-width: 1000px) {

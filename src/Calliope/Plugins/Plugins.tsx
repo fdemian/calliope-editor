@@ -29,7 +29,7 @@ const VideoPlugin = lazy(() => import('./VideoPlugin.ts'));
 const ExcalidrawPlugin = lazy(() => import('./ExcalidrawPlugin.ts'));
 const SpeechToTextPlugin = lazy(() => import('./SpeechToTextPlugin.ts'));
 const CitePlugin = lazy(() => import('./CitePlugin'));
-
+const CodeActionsPlugin = lazy(() => import('./CodeAction/CodeActionMenuPlugin.tsx'));
 
 type PluginComponentProps = {
   setFormats:fn;
@@ -55,6 +55,7 @@ function EditorPlugins({
 
   return(
   <>
+    <CodeActionsPlugin />
     <HistoryPlugin />
     {config.autoFocus && <AutoFocusPlugin />}
     {/*<AutoScrollPlugin editorRef={editorRef} />*/}
