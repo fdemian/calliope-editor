@@ -285,9 +285,10 @@ blockquote * {
   text-decoration: line-through;
 }
 
+
 .calliope-list-item-checked:before,
 .calliope-list-item-unchecked:before {
-  content: '';
+  content: "";
   width: 16px;
   height: 16px;
   top: 2px;
@@ -297,6 +298,34 @@ blockquote * {
   background-size: cover;
   position: absolute;
 }
+
+.calliope-list-item-unchecked:before {
+  border: 1px solid #999;
+  border-radius: 2px;
+}
+
+.calliope-list-item-checked:before {
+  border: 1px solid rgb(61, 135, 245);
+  border-radius: 2px;
+  background-color: #3d87f5;
+  background-repeat: no-repeat;
+}
+
+.calliope-list-item-checked:after {
+  content: '';
+  cursor: pointer;
+  border-color: #fff;
+  border-style: solid;
+  position: absolute;
+  display: block;
+  top: 6px;
+  width: 3px;
+  left: 7px;
+  height: 6px;
+  transform: rotate(45deg);
+  border-width: 0 2px 2px 0;
+}
+
 .calliope-list-item-unchecked[dir='rtl']:before,
 .calliope-list-item-checked[dir='rtl']:before {
   left: auto;
@@ -328,12 +357,13 @@ blockquote * {
   background: rgba(255, 212, 0, 0.7);
   border-bottom: 2px solid rgba(255, 212, 0, 0.7);
 }
+/*
 .calliope-list-item-unchecked:before {
   background-image: url(UI/Images/square.svg);
 }
 .calliope-list-item-checked:before {
   background-image: url(UI/Images/square-check.svg);
-}
+}*/
 .calliope-nested-list-item {
   list-style-type: none;
 }
