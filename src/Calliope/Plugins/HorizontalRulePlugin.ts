@@ -4,7 +4,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow strict
  */
 
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
@@ -27,11 +26,13 @@ export default function HorizontalRulePlugin(): null {
       INSERT_HORIZONTAL_RULE_COMMAND,
       (type) => {
         const selection = $getSelection();
+
         if (!$isRangeSelection(selection)) {
           return false;
         }
-        
+
         const focusNode = selection.focus.getNode();
+
         if (focusNode !== null) {
           const horizontalRuleNode = $createHorizontalRuleNode();
           selection.insertParagraph();

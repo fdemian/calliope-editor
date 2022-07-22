@@ -61,7 +61,7 @@ function EditorPlugins({
     {/*<AutoScrollPlugin editorRef={editorRef} />*/}
     <ClearEditorPlugin />
     <CodeHighlightPlugin />
-    <ListMaxIndentLevelPlugin />
+    <ListMaxIndentLevelPlugin maxDepth={7} />
     <LinkPlugin />
     <ListPlugin />
     <CheckListPlugin />

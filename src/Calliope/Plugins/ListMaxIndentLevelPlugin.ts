@@ -4,7 +4,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow strict
  */
 
 import type {RangeSelection} from 'lexical';
@@ -20,6 +19,10 @@ import {
   INDENT_CONTENT_COMMAND,
 } from 'lexical';
 import {useEffect} from 'react';
+
+type Props = Readonly<{
+  maxDepth: number | null | undefined;
+}>;
 
 function getElementNodesInSelection(
   selection: RangeSelection,
@@ -55,6 +58,7 @@ function isIndentPermitted(maxDepth: number): boolean {
       totalDepth = Math.max($getListDepth(elementNode) + 1, totalDepth);
     } else if ($isListItemNode(elementNode)) {
       const parent = elementNode.getParent();
+
       if (!$isListNode(parent)) {
         throw new Error(
           'ListMaxIndentLevelPlugin: A ListItemNode must have a ListNode for a parent.',
@@ -68,9 +72,7 @@ function isIndentPermitted(maxDepth: number): boolean {
   return totalDepth <= maxDepth;
 }
 
-export default function ListMaxIndentLevelPlugin(): null {
-  const maxDepth = 7;
-
+export default function ListMaxIndentLevelPlugin({maxDepth}: Props): null {
   const [editor] = useLexicalComposerContext();
 
   useEffect(() => {
@@ -80,6 +82,5 @@ export default function ListMaxIndentLevelPlugin(): null {
       COMMAND_PRIORITY_CRITICAL,
     );
   }, [editor, maxDepth]);
-
   return null;
 }
