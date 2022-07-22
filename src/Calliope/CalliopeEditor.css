@@ -97,7 +97,7 @@
 
 .editor-container-readonly, .editor-container-readonly * {
   cursor: default;
-  resize: none;
+  resize: none !important;
 }
 
 .editor-container:hover, .editor-container:focus
